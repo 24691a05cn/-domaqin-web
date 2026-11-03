@@ -1,0 +1,3 @@
+export function Topbar({tab,mission,online,onDemo,onCreate}:{tab:string;mission?:string;online:boolean;onDemo:()=>void;onCreate:()=>void}){
+ return <header className="topbar"><div><div className="crumb">DOMAQIN <span>/</span> {tab.toUpperCase()}</div><div className="top-title">{mission || 'Autonomous mission planning console'}</div></div><div className="top-actions"><span className="sim-badge">SIMULATION ENVIRONMENT</span><button className="ghost-btn" onClick={onDemo}>RUN DEMO <span>▶</span></button><button className="primary-btn" onClick={onCreate}>+ CREATE MISSION</button><div className={`connection ${online?'ok':''}`}><span className="pulse"/><b>{online?'CONNECTED':'OFFLINE'}</b></div></div></header>
+}
